@@ -48,9 +48,15 @@ int main() {
     freopen("a.out", "w", stdout);
     #endif
     cin >> n;
-    t[0] = 0;
-    minC = n;
-    Try(1);
-    for (int i = 1;i <= n;++ i) cout << best[i];
+    for (int i = 0;i < (1<<n);++ i) {
+        for (int j = n - 1;j >= 0;-- j) {
+            cout << ((i>>j)&1);
+        }
+        cout << "\n";
+    }
+    // t[0] = 0;
+    // minC = n;
+    // Try(1);
+    // for (int i = 1;i <= n;++ i) cout << best[i];
     return 0;
 }
